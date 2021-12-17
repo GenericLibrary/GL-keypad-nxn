@@ -1,2 +1,6 @@
 examples/espidf-ex/build
+examples/espidf-ex/sdkconfig
+examples/espidf-ex/sdkconfig.old
 examples/espidf-ex/test/build
+examples/espidf-ex/test/sdkconfig
+examples/espidf-ex/test/sdkconfig.old

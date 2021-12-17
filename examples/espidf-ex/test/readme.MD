@@ -1,6 +1,6 @@
+## TEST SUB-DIRECTORY WORKS LIKE ANOTHER PROJECT
 
 # Wiring
-
 | keypad 4x4 | gpio |
 |------|------|
 | column 1 | 15 |
@@ -29,3 +29,4 @@ idf.py build
 ```
 idf.py flash monitor -p x
 ```
+* Follow instructions on the monitor to check if the keypad works

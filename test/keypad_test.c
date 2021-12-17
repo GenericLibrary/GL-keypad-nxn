@@ -1,3 +1,8 @@
+/*
+    TEST COMPONENT FOR ESP IDF PLATFORM
+*/
+
+#ifdef ESP_PLATFORM
 #include "unity.h"
 #include "unity_fixture.h"
 #include "esp_system.h"
@@ -166,3 +171,4 @@ TEST(keypad_driver, AllButtons_Works_OnceAtATime)
 
     TEST_ASSERT_EQUAL(true, correct_button_pressed);
 }
+#endif
