@@ -2,11 +2,7 @@
 
 void init_keypad(keypad_t *keypad)
 {
-    uint8_t rows = keypad->rows;
-    for (uint8_t i = 1; i <= rows; i++)
-    {
-        keypad->row_as_Input(i);
-    }
+
 }
 
 keypad_keyPos_t scan_keypad(keypad_t *keypad)

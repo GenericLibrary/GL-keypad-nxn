@@ -1,0 +1,8 @@
+{
+    "files.associations": {
+        "runtime_error.h": "c",
+        "gpio.h": "c",
+        "keypad-nxn.h": "c",
+        "freertos.h": "c"
+    }
+}

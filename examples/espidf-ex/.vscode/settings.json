@@ -1,0 +1,22 @@
+{
+    "files.associations": {
+        "freertos.h": "c",
+        "esp_camera.h": "c",
+        "*.tcc": "cpp",
+        "vector": "cpp",
+        "random": "cpp",
+        "functional": "cpp",
+        "*.ipp": "cpp",
+        "string": "c",
+        "*.inc": "c",
+        "array": "cpp",
+        "string_view": "cpp",
+        "initializer_list": "cpp",
+        "utility": "cpp",
+        "gpio_periph.h": "c",
+        "unity.h": "c",
+        "unity_fixture.h": "c",
+        "unity_internals.h": "c",
+        "testable.h": "c"
+    }
+}
