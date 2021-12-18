@@ -104,6 +104,8 @@ void app_main(void)
     mykeypad.get_column_value = get_column_value;
     init_keypad(&mykeypad);
 
+    printf("\nPRESS KEYS:\n");
+
     while (1)
     {
         keypad_keyPos_t key = scan_keypad(&mykeypad);
