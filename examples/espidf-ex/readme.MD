@@ -3,7 +3,7 @@
 * ESP32
 * Keypad 4x4
 
-<img src="https://i.pinimg.com/originals/fe/ce/2e/fece2e0df83754548006f24746d13ef9.png" width="75%"> </img>
+<img src="https://d2vlcm61l7u1fs.cloudfront.net/media%2Fed9%2Fed98eb2a-0297-4171-96a1-8b1710d22608%2Fphp4GlyxC.png" width="75%"> </img>
 # Wiring
 
 | keypad 4x4 | gpio |
