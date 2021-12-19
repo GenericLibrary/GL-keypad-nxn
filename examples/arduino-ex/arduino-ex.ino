@@ -99,7 +99,8 @@ void setup()
   // Call "init_keypad" to initialize the keypad. In this case it does nothing
   init_keypad(&mykeypad);
 
-  printf("\nPRESS KEYS:\n");
+  Serial.begin(9600);
+  Serial.println("PRESS KEYS:");
 }
 
 void loop()
@@ -108,7 +109,10 @@ void loop()
   keypad_keyPos_t key = scan_keypad(&mykeypad);
   if (key.row != -1 && key.column != -1)
   {
-    printf("key pressed: %d, %d\n", key.row, key.column);
+    Serial.print("key pressed:");
+    Serial.print(key.row);
+    Serial.print(",");
+    Serial.println(key.column);
   }
   delay(1000);
 }
