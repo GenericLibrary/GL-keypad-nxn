@@ -4,3 +4,8 @@ examples/espidf-ex/sdkconfig.old
 examples/espidf-ex/test/build
 examples/espidf-ex/test/sdkconfig
 examples/espidf-ex/test/sdkconfig.old
+
+examples/atmega328pb-ex/.vs
+examples/atmega328pb-ex/atmega328pb-ex/Debug
+examples/atmega328pb-ex/atmega328pb-ex/Release
+examples/atmega328pb-ex/atmega328pb-ex/doxygen
