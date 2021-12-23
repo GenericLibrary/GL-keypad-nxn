@@ -34,7 +34,7 @@ TEST(keypad_driver, AllButtons_OneByOnePressedByUser)
     {
         for (uint8_t j = 1; j <= columns; j++)
         {
-            TEST_PRINTF("\nPRESS row:%i and column:%i for 5 seconds\n", i, j);
+            UnityPrintF(__LINE__, "\nPRESS row:%i and column:%i for 5 seconds\n", i, j);
             testkeypad->delay_ms(3500);
 
             keypad_keyPos_t keypos;
@@ -42,13 +42,13 @@ TEST(keypad_driver, AllButtons_OneByOnePressedByUser)
 
             if ((keypos.row != i) || (keypos.column != j))
             {
-                TEST_PRINTF("expected i = %i, j = %i\n", i, j);
-                TEST_PRINTF("pressed i = %i, j = %i\n", keypos.row, keypos.column);
+                UnityPrintF(__LINE__, "expected i = %i, j = %i\n", i, j);
+                UnityPrintF(__LINE__, "pressed i = %i, j = %i\n", keypos.row, keypos.column);
                 correct_button_pressed = false;
                 break;
             }
 
-            TEST_PRINTF("BUTTON DETECTED. RELEASE BUTTON\n\n");
+            UnityPrintF(__LINE__, "BUTTON DETECTED. RELEASE BUTTON\n\n");
             testkeypad->delay_ms(1500);
         }
         if (!correct_button_pressed)
