@@ -1,0 +1,3 @@
+[submodule "examples/arduino-ex/unity"]
+	path = examples/arduino-ex/unity
+	url = https://github.com/GenericLibrary/unity_arduino.git
