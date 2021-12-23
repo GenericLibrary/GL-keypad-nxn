@@ -1,3 +1,6 @@
 [submodule "examples/arduino-ex/unity"]
 	path = examples/arduino-ex/unity
 	url = https://github.com/GenericLibrary/unity_arduino.git
+[submodule "examples/stm32L4R5ZI/components/unity/Unity"]
+	path = examples/stm32L4R5ZI/components/unity/Unity
+	url = https://github.com/ThrowTheSwitch/Unity.git
