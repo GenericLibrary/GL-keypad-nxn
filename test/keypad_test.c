@@ -1,4 +1,3 @@
-
 #include "unity.h"
 #include "unity_fixture.h"
 #include "stdio.h"
@@ -34,26 +33,42 @@ TEST(keypad_driver, AllButtons_OneByOnePressedByUser)
     {
         for (uint8_t j = 1; j <= columns; j++)
         {
-            UnityPrintF(__LINE__, "\nPRESS row:%i and column:%i for 5 seconds\n", i, j);
-            testkeypad->delay_ms(3500);
+            UNITY_PRINT_EOL();
+            UnityPrint("PRESS row :");
+            UnityPrintNumber(i);
+            UnityPrint(" and column:");
+            UnityPrintNumber(j);
+            UnityPrint(" for 5 seconds");
+            UNITY_PRINT_EOL();
+            testkeypad->delay_ms(5500);
 
             keypad_keyPos_t keypos;
             scan_keypad(testkeypad, &keypos);
 
             if ((keypos.row != i) || (keypos.column != j))
             {
-                UnityPrintF(__LINE__, "expected i = %i, j = %i\n", i, j);
-                UnityPrintF(__LINE__, "pressed i = %i, j = %i\n", keypos.row, keypos.column);
+                UnityPrint("expected i= ");
+                UnityPrintNumber(i);
+                UnityPrint(" j=");
+                UnityPrintNumber(j);
+                UNITY_PRINT_EOL();
+
+                UnityPrint("pressed i= ");
+                UnityPrintNumber(keypos.row);
+                UnityPrint(" j=");
+                UnityPrintNumber(keypos.column);
+                UNITY_PRINT_EOL();
                 correct_button_pressed = false;
                 break;
             }
 
-            UnityPrintF(__LINE__, "BUTTON DETECTED. RELEASE BUTTON\n\n");
+            UnityPrint("BUTTON DETECTED. RELEASE BUTTON");
+            UNITY_PRINT_EOL();
             testkeypad->delay_ms(1500);
         }
         if (!correct_button_pressed)
             break;
     }
-
+    
     TEST_ASSERT_EQUAL(true, correct_button_pressed);
 }

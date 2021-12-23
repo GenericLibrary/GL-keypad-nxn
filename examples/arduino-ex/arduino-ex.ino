@@ -1,19 +1,21 @@
-#include "keypad-nxn.h"
-
-#include "unity/unity_config.h"
-#include "unity/unity.h"
-#include "unity/unity.c"
-#include "unity/unity_fixture.h"
-#include "unity/unity_fixture.c"
-
-#include "test/keypad_test.c"
-
 // Uncommend just one
 //#define TEST_PROJECT
 #define APP_PROJECT
 
-const uint8_t keypad_rows_number = 4;
-const uint8_t keypad_cols_number = 4;
+#include "keypad-nxn.h"
+
+#ifdef TEST_PROJECT
+#include "unity/unity_config.h"
+#include "unity/unity_memory.h"
+#include "unity/unity_memory.c"
+#include "unity/unity_port.c"
+#include "unity/unity.h"
+#include "unity/unity.c"
+#include "unity/unity_fixture.h"
+#include "unity/unity_fixture.c"
+#include "test/keypad_test.c"
+#include "test/runalltests.c"
+#endif
 
 #define ROW1 22
 #define ROW2 24
@@ -26,6 +28,8 @@ const uint8_t keypad_cols_number = 4;
 #define COL4 36
 
 keypad_t mykeypad;
+const uint8_t keypad_rows_number = 4;
+const uint8_t keypad_cols_number = 4;
 bool keypad_init_periph()
 {
   // all columns as "INPUT PULL_UP"
@@ -119,15 +123,8 @@ void keypad_delay_ms(int ms)
     delay(1);
 }
 
-static void runAllTests(void)
-{
- // RUN_TEST_GROUP(keypad_driver);
-}
-
 void setup()
 {
-#ifdef APP_PROJECT
-
   // Create a variable of type "keypad_t" and define each of its attributes
   mykeypad.rows = keypad_rows_number;
   mykeypad.columns = keypad_cols_number;
@@ -138,10 +135,12 @@ void setup()
   mykeypad.get_column_value = keypad_get_column_value;
   mykeypad.delay_ms = keypad_delay_ms;
 
+  Serial.begin(9600);
+
+#ifdef APP_PROJECT
   // Call "init_keypad" to initialize the keypad. In this case it does nothing
   init_keypad(&mykeypad);
-
-  Serial.begin(9600);
+  
   Serial.println("PRESS KEYS:");
 #endif
 
@@ -161,13 +160,14 @@ void loop()
 #ifdef APP_PROJECT
 
   //Call "scan_keypad" to check if any key is pressed
-  keypad_keyPos_t key = scan_keypad(&mykeypad);
-  if (key.row != -1 && key.column != -1)
+  keypad_keyPos_t keypos;
+  keypad_error_t res = scan_keypad(&mykeypad, &keypos);
+  if (keypos.row != -1 && keypos.column != -1)
   {
     Serial.print("key pressed:");
-    Serial.print(key.row);
+    Serial.print(keypos.row);
     Serial.print(",");
-    Serial.println(key.column);
+    Serial.println(keypos.column);
   }
   delay(1000);
 

@@ -17,6 +17,9 @@
         "unity_fixture_internals.h": "c",
         "unity_fixture.h": "c",
         "unity_memory.h": "c",
-        "setjmp.h": "c"
+        "setjmp.h": "c",
+        "unity.c": "cpp",
+        "unity_port.c": "cpp",
+        "ostream": "cpp"
     }
 }

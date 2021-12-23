@@ -18,7 +18,7 @@ void unity_putc(int c)
 
 void unity_flush(void)
 {
-    Serial.flush();
+    //Serial.flush();
 }
 
 void unity_exec_time_start(void)
