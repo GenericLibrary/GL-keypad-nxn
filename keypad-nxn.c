@@ -1,13 +1,27 @@
 #include "keypad-nxn.h"
 
-void init_keypad(keypad_t *keypad)
+keypad_error_t init_keypad(keypad_t *keypad)
 {
+    bool res = keypad->init_periph();
+    if (res == false)
+        return KEYPAD_INIT_PERIPH_ERR;
 
+    return KEYPAD_OK;
 }
 
-keypad_keyPos_t scan_keypad(keypad_t *keypad)
+keypad_error_t deinit_keypad(keypad_t *keypad)
 {
-    keypad_keyPos_t result = {-1, -1};
+    bool res = keypad->deinit_periph();
+    if (res == false)
+        return KEYPAD_DEINIT_PERIPH_ERR;
+
+    return KEYPAD_OK;
+}
+
+keypad_error_t scan_keypad(keypad_t *keypad, keypad_keyPos_t *keyPos)
+{
+    keyPos->row = -1;
+    keyPos->column = -1;
     uint8_t rows = keypad->rows;
     uint8_t columns = keypad->columns;
 
@@ -21,8 +35,8 @@ keypad_keyPos_t scan_keypad(keypad_t *keypad)
             key_pressed = (keypad->get_column_value(j) == 0);
             if (key_pressed)
             {
-                result.row = i;
-                result.column = j;
+                keyPos->row = i;
+                keyPos->column = j;
                 break;
             }
         }
@@ -35,5 +49,5 @@ keypad_keyPos_t scan_keypad(keypad_t *keypad)
         }
     }
 
-    return result;
+    return KEYPAD_OK;
 }

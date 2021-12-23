@@ -1,0 +1,23 @@
+#ifndef UNITY_CONFIG_H
+#define UNITY_CONFIG_H
+
+#define UNITY_INCLUDE_CONFIG_H
+#define UNITY_INCLUDE_PRINT_FORMATTED
+#define UNITY_INCLUDE_FLOAT
+#define UNITY_INCLUDE_DOUBLE
+#define UNITY_OUTPUT_COLOR
+#define UNITY_EXCLUDE_TIME_H
+
+void unity_flush(void);
+void unity_putc(int c);
+void unity_exec_time_start(void);
+void unity_exec_time_stop(void);
+uint32_t unity_exec_time_get_ms(void);
+
+#define UNITY_OUTPUT_CHAR(a)    unity_putc(a)
+#define UNITY_OUTPUT_FLUSH()    unity_flush()
+#define UNITY_EXEC_TIME_START() unity_exec_time_start()
+#define UNITY_EXEC_TIME_STOP()  unity_exec_time_stop()
+#define UNITY_EXEC_TIME_MS()    unity_exec_time_get_ms()
+
+#endif 

@@ -1,8 +1,7 @@
-
-#include "unity.h"
-#include "unity_fixture.h"
+#include "../unity/unity_config.h"
+#include "../unity/unity.h"
+#include "../unity/unity_fixture.h"
 #include "stdio.h"
-#include "runtime_error.h"
 #include "keypad-nxn.h"
 
 TEST_GROUP(keypad_driver);

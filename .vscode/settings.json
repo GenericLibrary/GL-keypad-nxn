@@ -3,6 +3,20 @@
         "runtime_error.h": "c",
         "gpio.h": "c",
         "keypad-nxn.h": "c",
-        "freertos.h": "c"
+        "freertos.h": "c",
+        "unity.h": "c",
+        "stdio.h": "c",
+        "future": "cpp",
+        "system_error": "cpp",
+        "*.ipp": "cpp",
+        "keypad_test.c": "cpp",
+        "chrono": "c",
+        "codecvt": "c",
+        "xlocale": "c",
+        "unity_internals.h": "c",
+        "unity_fixture_internals.h": "c",
+        "unity_fixture.h": "c",
+        "unity_memory.h": "c",
+        "setjmp.h": "c"
     }
 }
