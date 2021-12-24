@@ -13,8 +13,7 @@ static uint32_t s_test_start, s_test_stop;
 extern UART_HandleTypeDef hlpuart1;
 void unity_putc(int c) {
 	if (c == '\n') {
-		HAL_UART_Transmit(&hlpuart1, (uint8_t*) "\r", 1, 1000);
-		HAL_UART_Transmit(&hlpuart1, (uint8_t*) "\n", 1, 1000);
+		HAL_UART_Transmit(&hlpuart1, (uint8_t*) "\r\n", 2, 1000);
 
 	} else if (c == '\r') {
 	} else {

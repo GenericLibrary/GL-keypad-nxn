@@ -21,11 +21,10 @@ void runAllTests(void) {
 int mainTest(void) {
 	testkeypad = &mykeypad;
 
-	//const char *args[] = {"main_test.c", "-v", "", "-g", "", "-n", "", "-r", ""};
-	const char *args[] =
-			{ "main_test.c", "-v", "-g", "keypad_driver", "-r", "2" };
+	//const char *arg[] = {"main_test.c", "-v", "", "-g", "", "-n", "", "-r", ""};
+	const char *arg[] =
+			{ "rullAllTests.c", "-v", "-g", "keypad_driver", "-r", "2" };
 
-	UnityMain(sizeof(args) / sizeof(char*), args, runAllTests);
-	return 1;
+	return UnityMain(sizeof(arg) / sizeof(char*), arg, runAllTests);
 }
 
