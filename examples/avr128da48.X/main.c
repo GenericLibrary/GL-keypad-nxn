@@ -26,7 +26,7 @@ const uint8_t keypad_rows_number = 4;
 const uint8_t keypad_cols_number = 4;
 bool keypad_init_periph() {
     // all columns as "INPUT PULL_UP"
-    /*
+    
     C1_SetDigitalInput();
     C1_SetPullUp();
     C2_SetDigitalInput();
@@ -41,10 +41,10 @@ bool keypad_init_periph() {
     R2_SetDigitalInput();
     R3_SetDigitalInput();
     R4_SetDigitalInput();
-*/
+
     return true;
 }
-bool keypad_deinit_periph() {/*
+bool keypad_deinit_periph() {
     C1_ResetPullUp();
     C2_ResetPullUp();
     C3_ResetPullUp();
@@ -52,7 +52,7 @@ bool keypad_deinit_periph() {/*
     R1_SetDigitalInput();
     R2_SetDigitalInput();
     R3_SetDigitalInput();
-    R4_SetDigitalInput();*/
+    R4_SetDigitalInput();
     return true;
 }
 void row_as_input(uint8_t row) {
