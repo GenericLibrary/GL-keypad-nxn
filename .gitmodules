@@ -7,3 +7,6 @@
 [submodule "examples/avr128da48.X/components/unity_onedir"]
 	path = examples/avr128da48.X/components/unity_onedir
 	url = https://github.com/GenericLibrary/unity_onedir.git
+[submodule "examples/atmega328pb-ex/atmega328pb-ex/components/unity_onedir"]
+	path = examples/atmega328pb-ex/atmega328pb-ex/components/unity_onedir
+	url = https://github.com/GenericLibrary/unity_onedir.git
