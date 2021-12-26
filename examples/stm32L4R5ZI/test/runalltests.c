@@ -27,4 +27,3 @@ int mainTest(void) {
 
 	return UnityMain(sizeof(arg) / sizeof(char*), arg, runAllTests);
 }
-

@@ -4,3 +4,6 @@
 [submodule "examples/stm32L4R5ZI/components/unity/Unity"]
 	path = examples/stm32L4R5ZI/components/unity/Unity
 	url = https://github.com/ThrowTheSwitch/Unity.git
+[submodule "examples/avr128da48.X/components/unity_onedir"]
+	path = examples/avr128da48.X/components/unity_onedir
+	url = https://github.com/GenericLibrary/unity_onedir.git
