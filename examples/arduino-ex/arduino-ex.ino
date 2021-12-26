@@ -5,10 +5,10 @@
 #include "keypad-nxn.h"
 
 #ifdef TEST_PROJECT
-#include "unity/unity_config.h"
+#include "unity_config.h"
 #include "unity/unity_memory.h"
 #include "unity/unity_memory.c"
-#include "unity/unity_port.c"
+#include "unity_port.c"
 #include "unity/unity.h"
 #include "unity/unity.c"
 #include "unity/unity_fixture.h"
