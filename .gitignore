@@ -14,11 +14,8 @@ examples/.metadata
 examples/stm32L4R5ZI/.settings
 examples/stm32L4R5ZI/Release
 examples/stm32L4R5ZI/Debug
-examples/stm32L4R5ZI/Drivers
 
-examples/avr128da48.X/.generated_files
 examples/avr128da48.X/dist
 examples/avr128da48.X/debug
 examples/avr128da48.X/release
 examples/avr128da48.X/build
-examples/avr128da48.X/mcc_generated_files

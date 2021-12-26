@@ -1,7 +1,5 @@
-#if defined(ESP_PLATFORM)
 #include "unity.h"
 #include "unity_fixture.h"
-#endif
 #include "stdio.h"
 
 TEST_GROUP(keypad_driver);

@@ -3,7 +3,6 @@
 #include <stdio.h>
 #include "../../../keypad-nxn.h"
 #include "../../../test/keypad_test.c"
-#include <avr/pgmspace.h>
 
 extern keypad_t mykeypad;
 
