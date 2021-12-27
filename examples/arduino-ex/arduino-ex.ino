@@ -148,7 +148,7 @@ void setup()
   testkeypad = &mykeypad;
 
   //const char *args[] = {"main_test.c", "-v", "", "-g", "", "-n", "", "-r", ""};
-  const char *args[] = {"main_test.c", "-v", "-g", "keypad_driver", "-r", "1"};
+  const char *args[] = {"main_test.c", "-v", "-g", "keypad_driver", "-r", "2"};
 
   UnityMain(sizeof(args) / sizeof(char *), args, runAllTests);
   return;

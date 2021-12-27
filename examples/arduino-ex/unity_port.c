@@ -1,7 +1,7 @@
-#if defined(ARDUINO) && defined(__AVR_ATmega2560__)
+#if defined(ARDUINO) && defined(__AVR_ATmega2560__) && defined(TEST_PROJECT)
 
 #include <string.h>
-#include "unity.h"
+#include "unity/unity.h"
 #include "Arduino.h"
 
 static uint32_t s_test_start, s_test_stop;
