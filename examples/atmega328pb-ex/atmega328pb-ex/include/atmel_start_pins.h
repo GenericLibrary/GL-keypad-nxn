@@ -11,68 +11,6 @@
 #include <port.h>
 
 /**
- * \brief Set tx pull mode
- *
- * Configure pin to pull up, down or disable pull mode, supported pull
- * modes are defined by device used
- *
- * \param[in] pull_mode Pin pull mode
- */
-static inline void tx_set_pull_mode(const enum port_pull_mode pull_mode)
-{
-	PORTB_set_pin_pull_mode(0, pull_mode);
-}
-
-/**
- * \brief Set tx data direction
- *
- * Select if the pin data direction is input, output or disabled.
- * If disabled state is not possible, this function throws an assert.
- *
- * \param[in] direction PORT_DIR_IN  = Data direction in
- *                      PORT_DIR_OUT = Data direction out
- *                      PORT_DIR_OFF = Disables the pin
- *                      (low power state)
- */
-static inline void tx_set_dir(const enum port_dir dir)
-{
-	PORTB_set_pin_dir(0, dir);
-}
-
-/**
- * \brief Set tx level
- *
- * Sets output level on a pin
- *
- * \param[in] level true  = Pin level set to "high" state
- *                  false = Pin level set to "low" state
- */
-static inline void tx_set_level(const bool level)
-{
-	PORTB_set_pin_level(0, level);
-}
-
-/**
- * \brief Toggle output level on tx
- *
- * Toggle the pin level
- */
-static inline void tx_toggle_level()
-{
-	PORTB_toggle_pin_level(0);
-}
-
-/**
- * \brief Get level on tx
- *
- * Reads the level on a pin
- */
-static inline bool tx_get_level()
-{
-	return PORTB_get_pin_level(0);
-}
-
-/**
  * \brief Set c4 pull mode
  *
  * Configure pin to pull up, down or disable pull mode, supported pull
@@ -82,7 +20,7 @@ static inline bool tx_get_level()
  */
 static inline void c4_set_pull_mode(const enum port_pull_mode pull_mode)
 {
-	PORTD_set_pin_pull_mode(0, pull_mode);
+	PORTB_set_pin_pull_mode(0, pull_mode);
 }
 
 /**
@@ -98,7 +36,7 @@ static inline void c4_set_pull_mode(const enum port_pull_mode pull_mode)
  */
 static inline void c4_set_dir(const enum port_dir dir)
 {
-	PORTD_set_pin_dir(0, dir);
+	PORTB_set_pin_dir(0, dir);
 }
 
 /**
@@ -111,7 +49,7 @@ static inline void c4_set_dir(const enum port_dir dir)
  */
 static inline void c4_set_level(const bool level)
 {
-	PORTD_set_pin_level(0, level);
+	PORTB_set_pin_level(0, level);
 }
 
 /**
@@ -121,7 +59,7 @@ static inline void c4_set_level(const bool level)
  */
 static inline void c4_toggle_level()
 {
-	PORTD_toggle_pin_level(0);
+	PORTB_toggle_pin_level(0);
 }
 
 /**
@@ -131,7 +69,7 @@ static inline void c4_toggle_level()
  */
 static inline bool c4_get_level()
 {
-	return PORTD_get_pin_level(0);
+	return PORTB_get_pin_level(0);
 }
 
 /**
@@ -144,7 +82,7 @@ static inline bool c4_get_level()
  */
 static inline void c3_set_pull_mode(const enum port_pull_mode pull_mode)
 {
-	PORTD_set_pin_pull_mode(1, pull_mode);
+	PORTB_set_pin_pull_mode(1, pull_mode);
 }
 
 /**
@@ -160,7 +98,7 @@ static inline void c3_set_pull_mode(const enum port_pull_mode pull_mode)
  */
 static inline void c3_set_dir(const enum port_dir dir)
 {
-	PORTD_set_pin_dir(1, dir);
+	PORTB_set_pin_dir(1, dir);
 }
 
 /**
@@ -173,7 +111,7 @@ static inline void c3_set_dir(const enum port_dir dir)
  */
 static inline void c3_set_level(const bool level)
 {
-	PORTD_set_pin_level(1, level);
+	PORTB_set_pin_level(1, level);
 }
 
 /**
@@ -183,7 +121,7 @@ static inline void c3_set_level(const bool level)
  */
 static inline void c3_toggle_level()
 {
-	PORTD_toggle_pin_level(1);
+	PORTB_toggle_pin_level(1);
 }
 
 /**
@@ -193,7 +131,7 @@ static inline void c3_toggle_level()
  */
 static inline bool c3_get_level()
 {
-	return PORTD_get_pin_level(1);
+	return PORTB_get_pin_level(1);
 }
 
 /**

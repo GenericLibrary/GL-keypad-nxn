@@ -11,8 +11,8 @@
 |------|------|
 | column 1 | d3 |
 | column 2 | d2 |
-| column 3 | d1 |
-| column 4 | d0 |
+| column 3 | b1 |
+| column 4 | b0 |
 | row 1 | d7 |
 | row 2 | d6 |
 | row 3 | d5 |
@@ -20,7 +20,7 @@
 
 | FTDI | pin |
 |------|------|
-| rx | b0 |
+| rx | d1 |
 | gnd | gnd |
 
 # How to use it

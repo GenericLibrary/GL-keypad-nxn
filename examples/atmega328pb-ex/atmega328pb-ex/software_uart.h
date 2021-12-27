@@ -13,9 +13,9 @@
 const uint8_t bit_lenght = 8;
 const uint8_t bittime_us = 104; // for 9600 bauds
 
-#define init_pin() (DDRB |= (1<<0))
-#define set_low() (PORTB &= ~(1<<0))
-#define set_high() (PORTB |= (1<<0))
+#define init_pin() (DDRD |= (1<<1))
+#define set_low() (PORTD &= ~(1<<1))
+#define set_high() (PORTD |= (1<<1))
 #define wait_bit_time() (_delay_us(bittime_us))
 
 void software_uart_init(){

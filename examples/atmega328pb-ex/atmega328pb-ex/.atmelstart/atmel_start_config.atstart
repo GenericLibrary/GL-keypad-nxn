@@ -28,7 +28,7 @@ drivers:
     configuration:
       $input: 32768
       RESERVED_InputFreq: 32768
-      _$freq_output_Async input clock: '32768'
+      _$freq_output_Async input clock: 32768
       _$freq_output_Input clock: 8000000
       async_input_speed: 32768
       clkadc_oscillator: Input clock
@@ -94,23 +94,16 @@ pads:
     mode: Digital input
     user_label: r1
     configuration: null
-  tx:
+  c4:
     name: PB0
     definition: Atmel:ATMega328PB_drivers:1.0.0::ATmega328PB-AU::pad::PB0
-    mode: Digital output
-    user_label: tx
-    configuration:
-      pad_initial_level: High
-  c4:
-    name: PD0
-    definition: Atmel:ATMega328PB_drivers:1.0.0::ATmega328PB-AU::pad::PD0
     mode: Digital input
     user_label: c4
     configuration:
       pad_pull_config: Pull-up
   c3:
-    name: PD1
-    definition: Atmel:ATMega328PB_drivers:1.0.0::ATmega328PB-AU::pad::PD1
+    name: PB1
+    definition: Atmel:ATMega328PB_drivers:1.0.0::ATmega328PB-AU::pad::PB1
     mode: Digital input
     user_label: c3
     configuration:

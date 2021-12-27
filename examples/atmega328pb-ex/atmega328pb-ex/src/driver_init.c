@@ -45,18 +45,6 @@ void system_init()
 
 	/* PORT setting on PB0 */
 
-	// Set pin direction to output
-	tx_set_dir(PORT_DIR_OUT);
-
-	tx_set_level(
-	    // <y> Initial level
-	    // <id> pad_initial_level
-	    // <false"> Low
-	    // <true"> High
-	    true);
-
-	/* PORT setting on PD0 */
-
 	// Set pin direction to input
 	c4_set_dir(PORT_DIR_IN);
 
@@ -67,7 +55,7 @@ void system_init()
 	    // <PORT_PULL_UP"> Pull-up
 	    PORT_PULL_UP);
 
-	/* PORT setting on PD1 */
+	/* PORT setting on PB1 */
 
 	// Set pin direction to input
 	c3_set_dir(PORT_DIR_IN);

@@ -19,8 +19,8 @@ int mainTest(void);
 #define ROW4 d4
 #define COL1 d3
 #define COL2 d2
-#define COL3 d1
-#define COL4 d0
+#define COL3 b1
+#define COL4 b0
 
 keypad_t mykeypad;
 const uint8_t keypad_rows_number = 4;
@@ -56,13 +56,9 @@ bool keypad_deinit_periph()
 	c4_set_pull_mode(PORT_PULL_OFF);
 
 	r1_set_dir(PORT_DIR_IN);
-	r1_set_pull_mode(PORT_PULL_OFF);
 	r2_set_dir(PORT_DIR_IN);
-	r2_set_pull_mode(PORT_PULL_OFF);
 	r3_set_dir(PORT_DIR_IN);
-	r3_set_pull_mode(PORT_PULL_OFF);
 	r4_set_dir(PORT_DIR_IN);
-	r4_set_pull_mode(PORT_PULL_OFF);
 	return true;
 }
 void row_as_input(uint8_t row)
@@ -70,16 +66,16 @@ void row_as_input(uint8_t row)
 	switch (row)
 	{
 		case 1:
-		DDRD &= ~(1<<7);
+		r1_set_dir(PORT_DIR_IN);
 		break;
 		case 2:
-		DDRD &= ~(1<<6);
+		r2_set_dir(PORT_DIR_IN);
 		break;
 		case 3:
-		DDRD &= ~(1<<5);
+		r3_set_dir(PORT_DIR_IN);
 		break;
 		case 4:
-		DDRD &= ~(1<<4);
+		r4_set_dir(PORT_DIR_IN);
 		break;
 		default:
 		break;
@@ -90,20 +86,20 @@ void row_as_output_low(uint8_t row)
 	switch (row)
 	{
 		case 1:
-		DDRD |= (1<<7);
-		PORTD &= ~(1<<7);
+		r1_set_dir(PORT_DIR_OUT);
+		r1_set_level(0);
 		break;
 		case 2:
-		DDRD |= (1<<6);
-		PORTD &= ~(1<<6);
+		r2_set_dir(PORT_DIR_OUT);
+		r2_set_level(0);
 		break;
 		case 3:
-		DDRD |= (1<<5);
-		PORTD &= ~(1<<5);
+		r3_set_dir(PORT_DIR_OUT);
+		r3_set_level(0);
 		break;
 		case 4:
-		DDRD |= (1<<4);
-		PORTD &= ~(1<<4);
+		r4_set_dir(PORT_DIR_OUT);
+		r4_set_level(0);
 		break;
 		default:
 		break;
@@ -114,13 +110,13 @@ uint8_t get_column_value(uint8_t column)
 	switch (column)
 	{
 		case 1:
-		return (uint8_t)(PIND & (1<<3) ? 1:0 );
+		return (uint8_t)c1_get_level();
 		case 2:
-		return (uint8_t)(PIND & (1<<2) ? 1:0 );
+		return (uint8_t)c2_get_level();
 		case 3:
-		return (uint8_t)(PIND & (1<<1) ? 1:0 );
+		return (uint8_t)c3_get_level();
 		case 4:
-		return (uint8_t)(PIND & (1<<0) ? 1:0 );
+		return (uint8_t)c4_get_level();
 		default:
 		return 0;
 	}
