@@ -1,7 +1,12 @@
+#include "stdio.h"
+
+#if defined(ARDUINO)
+#include "../keypad-nxn.h"
+#else
 #include "unity.h"
 #include "unity_fixture.h"
-#include "stdio.h"
 #include "keypad-nxn.h"
+#endif
 
 TEST_GROUP(keypad_driver);
 
